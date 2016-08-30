@@ -50,11 +50,21 @@ namespace AccountManager.Business.Infrastructure.Repositories.Mongo
         public void Insert<T>(T item) where T : BaseEntity
         {
             var typeName = typeof(T).ToString();
-            
+
             var bson = item.ToBsonDocument();
 
             var collection = _database.GetCollection<BsonDocument>(typeName);
             collection.InsertOne(bson);
+        }
+
+        public void InsertMany<T>(ICollection<T> items) where T : BaseEntity
+        {
+            var typeName = typeof(T).ToString();
+
+            var bsons = items.Select(item => item.ToBsonDocument());
+
+            var collection = _database.GetCollection<BsonDocument>(typeName);
+            collection.InsertMany(bsons);
         }
     }
 }

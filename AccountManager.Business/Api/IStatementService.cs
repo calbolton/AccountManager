@@ -5,5 +5,7 @@ namespace AccountManager.Business.Api
     public interface IStatementService
     {
         GetStatementItemsResponse GetStatementItems();
+
+        GetCategoriesResponse GetCategories();
     }
 }

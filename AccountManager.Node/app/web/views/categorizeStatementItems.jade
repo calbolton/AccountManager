@@ -1,0 +1,45 @@
+﻿extends layout
+
+block content
+    div.portlet
+        div.portlet-title
+            div.caption
+                i.glyphicon.glyphicon-adjust
+                span.caption-subject.text-uppercase Categorize
+                span.caption-helper categorize statement items
+        div.portlet-body
+            div.row
+                div.col-md-2.col-md-offset-5
+                    h5 Current Uncategorized
+            div.row
+                h4 {{cat.currentUncategorized.description}}
+            div.ui-widget
+                label(for="txtCategory") Category:
+
+                input(id="txtCategory")
+            div
+                button(ng-click="cat.updateCategory()") Update 
+       
+    input(type="text" ng-model="cat.selectedCategory" ui-autocomplete="cat.myOption")
+    hr 
+
+    div.search-table.table-responsive
+        table.table.table-striped.table-hover.selectable(st-class-ascent="fa fa-sort-asc fa-fw" st-class-descent="fa fa-sort-desc fa-fw")
+            caption.text-center
+            thead
+                tr
+                    th(colspan="7")
+                        input.input-sm.form-control(st-search placeholder="Filter statement items..." type="search")            
+                tr
+                    th(st-sort="date") Date 
+                    th(st-sort="description") Description 
+                    th(st-sort="amount") Amount
+                    th(st-sort="balance") Balance
+                    th(st-sort="category") Category
+            tbody
+                    tr(st-select-row="searchResult" ng-repeat="statementItem in cat.accountManagerModel.statementItems")
+                        td(st-ratio="20") {{statementItem.dateTime}}
+                        td(st-ratio="20") {{statementItem.description}}
+                        td(st-ratio="20") {{statementItem.amount}}
+                        td(st-ratio="20") {{statementItem.balance}}
+                        td(st-ratio="20") {{statementItem.category.name}}

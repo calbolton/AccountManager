@@ -82,10 +82,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\IStatementService.cs" />
+    <Compile Include="Api\Models\GetCategoriesResponse.cs" />
     <Compile Include="Api\Models\GetStatementItemsResponse.cs" />
+    <Compile Include="Application\Mappers\GetCategoriesResponseMapper.cs" />
     <Compile Include="Application\Mappers\GetStatementItemsResponseMapper.cs" />
     <Compile Include="Application\StatementService.cs" />
-    <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="Domain\Infrastructure\IStatementItemRepository.cs" />
     <Compile Include="Domain\Infrastructure\IStatementProcessor.cs" />
     <Compile Include="Domain\Models\Category.cs" />

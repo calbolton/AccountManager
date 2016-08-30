@@ -17,13 +17,20 @@ namespace AccountManager.Business.Application.Mappers
                     Amount = x.Amount,
                     Balance = x.Balance,
                     Description = x.Description,
-                    Category = new GetStatementItemsResponse.Category()
-                    {
-                        Id = x.Category.Id,
-                        Name = x.Category.Name
-                    }
+                    Category = Map(x.Category)
                 }).ToList()
             };
+        }
+
+        private static GetStatementItemsResponse.Category Map(Category category)
+        {
+            return category == null
+                ? null
+                : new GetStatementItemsResponse.Category()
+                {
+                    Id = category.Id,
+                    Name = category.Name
+                };
         }
     }
 }

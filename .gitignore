@@ -2,3 +2,8 @@
 packages/*.*
 bin
 obj
+AccountManager.Node/app/**/*.js
+AccountManager.Node/node_modules/
+AccountManager.Web/Scripts/
+AccountManager.Web/wwwroot/**
+AccountManager.Node/Scripts/**

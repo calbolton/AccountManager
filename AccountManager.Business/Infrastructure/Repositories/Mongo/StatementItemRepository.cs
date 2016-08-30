@@ -12,5 +12,10 @@ namespace AccountManager.Business.Infrastructure.Repositories.Mongo
         {
             return MongoDb.GetAll<StatementItem>();
         }
+
+        public ICollection<Category> GetAllCategories()
+        {
+            return MongoDb.GetAll<Category>();
+        }
     }
 }

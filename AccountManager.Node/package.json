@@ -1,0 +1,22 @@
+{
+  "name": "account-manager.node",
+  "version": "0.0.0",
+  "description": "AccountManager.Node",
+  "main": "app.js",
+  "author": {
+    "name": "calbo_000",
+    "email": ""
+  },
+  "dependencies": {
+    "angular": "^1.5.6",
+    "angular-route": "^1.5.6",
+    "body-parser": "^1.15.1",
+    "express": "3.4.4",
+    "jade": "*",
+    "jquery": "^3.0.0",
+    "jquery-ui": "^1.10.5",
+    "mongodb": "^2.1.21",
+    "stylus": "*",
+    "underscore": "^1.8.3"
+  }
+}

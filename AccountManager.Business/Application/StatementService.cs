@@ -19,5 +19,11 @@ namespace AccountManager.Business.Application
 
             return GetStatementItemsResponseMapper.Map(statementItems);
         }
+
+        public GetCategoriesResponse GetCategories()
+        {
+            var categories = _statementItemRepository.GetAllCategories();
+            return GetCategoriesResponseMapper.Map(categories);
+        }
     }
 }

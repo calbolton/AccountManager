@@ -6,5 +6,7 @@ namespace AccountManager.Business.Domain.Infrastructure
     public interface IStatementItemRepository
     {
         ICollection<StatementItem> GetStatementItems();
+
+        ICollection<Category> GetAllCategories();
     }
 }

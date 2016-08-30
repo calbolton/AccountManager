@@ -11,5 +11,10 @@ namespace AccountManager.Business.Infrastructure.Repositories.File
         {
             return IOHelper.LoadStatementItems();
         }
+
+        public ICollection<Category> GetAllCategories()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
